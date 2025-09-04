@@ -5,8 +5,9 @@ body {
 .people {
     display: grid; 
     gap: 30;
-    justify-content: center;
     margin: 35px, 30px, 155px;
+    justify-items: center; 
+  align-items: center;
 
     
 
@@ -33,6 +34,7 @@ grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     padding-top: 35px;
     object-fit: contain;
+    calc(50% - (32px / 2));
 
 
 &__photo{
