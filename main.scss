@@ -38,40 +38,41 @@ grid-template-columns: repeat(var(--columns * 2), 200px);
 .person {
 position: relative;
  width: 100%;
-    padding: 10px 10px 0;
+padding: 10px 10px 0;
 border-top-left-radius: 10px;
 border-bottom-right-radius: 10px;
-    transition: transform 1s;
+transition: transform 1s;
 
-&__photo{
-position: relative;
-}
+      &:hover {
+            background: #EEE;
+            transform: scale(1.2);
+            z-index: 1;
+      &:hover &__image {
+            border-radius: 60px;
 
-    img {
-display: block;
-object-fit: cover;
-width: 200px;
-height: 200px;
+&__img {
+--size: 200px;
+width:var(--size);
+height: var(--size);;
 border-radius: 50%;
-
+      transition: border-radius 1s;
 }
-
 
 &__rank {
+      --size: 32px;
+      display: flex;
       position: absolute;
       text-align: center;
     justify-content: center;
-      top: calc(50% - (32px / 2));
-    // transform: translateY(-50%);
+       transform: translateY(-50%);
     top: 50%;
       right: 10px;
       background-color: #fff;
       color: #ff5722;
+      width: var(--size);
+      height: var(--size);
       font-weight: bold;
-      font-size: 14px;
-      padding: 6px 10px;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      font-size: 16px;
     }
 
 &__details {
@@ -84,61 +85,39 @@ color: #2F4F4F;
 padding-top: 8px;
 
 }
-    &__sport {
-        &::arter {
-content: ",";
-        }
-    }
+&__name {
+display: block;
+text-align: center;
+font-weight: 700;
+font-size: 24px;
+color: #2F4F4F4;
+}
+&__sport {
+ &::arter {
+      content: ",";
+}
+}
+&__pay {
+      &::before {
+      content: "$";
+      }
+      &::after {
+            content: "M";
+      }
 
 &__extra {
     display: none;
-  opacity: 0;
 position: absolute;
-  transition: opacity 1s ease;
-  font-family: Arial;
+      left: 0;
+      width:100%
 font-weight: 400;
 font-size: 18px;
-line-height: 100%;
 text-align: center;
-color: #000;
+color: #EEE;
 padding-top: 9px 10px 16px;
+border-top-left-radius: 10px;
+border-bottom-right-radius: 10px;
 }
-  &__image:hover {
-width: 3
-        
-}
+            }  
 
-.person: {
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  background-color: #EEEEEE; 
-width: 220px;    
-border-radius: 10px;
-transform: scale(1.2) 1s;   
-transition: border-radius 1s;   
-    padding: 10px 0;
-    position reletive;
-}
-
-    .person:hover {
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  background-color: #EEEEEE; 
-width: 220px;    
-border-radius: 10px;
-transform: scale(1.2) 1s;   
-transition: border-radius 1s;   
-    padding: 10px 0;
-    position reletive;
-}
-.person:hover .person__extra {
-  opacity: 1;
-  visibility: visible;
-  padding:10px;
-    z-index: 1;
-}
-    
-
-    .name {
-        display: block;
-        text-align: center:
-            font-weight: 700;
-        font-size: 24px;
+  
